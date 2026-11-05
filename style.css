@@ -264,3 +264,81 @@ footer {
         height: 220px;
     }
 }
+/* ===== About page: one screen, same look ===== */
+.about-page {
+    min-height: 100vh;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.about-page main {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-page .page-section {
+    width: 100%;
+    max-width: 1300px;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.about-page .page-section > p {
+    max-width: 900px;
+    margin: 0 auto 28px;
+}
+
+.about-page .cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    text-align: left;
+}
+
+.about-page .card {
+    padding: 22px 28px;
+}
+
+.about-page .card h3 {
+    margin: 0 0 8px;
+}
+
+.about-page .card p {
+    margin: 0;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.skill-tags span {
+    padding: 4px 12px;
+    border: 1px solid #38bdf8;
+    color: #38bdf8;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* Small screens: allow scrolling */
+@media (max-width: 900px), (max-height: 700px) {
+    .about-page {
+        height: auto;
+        overflow: auto;
+    }
+
+    .about-page main {
+        padding: 30px 0;
+    }
+
+    .about-page .cards {
+        grid-template-columns: 1fr;
+    }
+}
