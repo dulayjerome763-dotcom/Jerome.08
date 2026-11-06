@@ -312,3 +312,62 @@ footer {
 .about-page footer {
     padding: 10px 0;
 }
+/* Compact + centered layout for the About page only */
+
+.about-page main {
+    min-height: auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-page .page-section {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.about-page .page-section h2 {
+    font-size: 1.4rem;
+    margin: 0 0 6px;
+}
+
+.about-page .page-section > p {
+    max-width: 850px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin: 0 auto 10px;
+}
+
+.about-page .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 10px;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.about-page .card {
+    padding: 10px 14px;
+    margin: 0;
+    text-align: center;   /* change to "left" if you want card text left-aligned */
+}
+
+.about-page .card h3 {
+    font-size: 1rem;
+    margin: 0 0 4px;
+}
+
+.about-page .card p {
+    font-size: 0.82rem;
+    line-height: 1.35;
+    margin: 0 0 2px;
+}
+
+.about-page footer {
+    padding: 10px 0;
+}
