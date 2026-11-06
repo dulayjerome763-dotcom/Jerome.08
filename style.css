@@ -264,3 +264,51 @@ footer {
         height: 220px;
     }
 }
+/* Compact layout for the About page only */
+
+.about-page main {
+    min-height: auto;
+    padding: 0;
+}
+
+.about-page .page-section {
+    padding: 12px 40px;
+    margin: 0;
+}
+
+.about-page .page-section h2 {
+    font-size: 1.4rem;
+    margin: 0 0 6px;
+}
+
+.about-page .page-section > p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin: 0 0 10px;
+}
+
+.about-page .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 10px;
+}
+
+.about-page .card {
+    padding: 10px 14px;
+    margin: 0;
+}
+
+.about-page .card h3 {
+    font-size: 1rem;
+    margin: 0 0 4px;
+}
+
+.about-page .card p {
+    font-size: 0.82rem;
+    line-height: 1.35;
+    margin: 0 0 2px;
+}
+
+.about-page footer {
+    padding: 10px 0;
+}
