@@ -371,3 +371,10 @@ footer {
 .about-page footer {
     padding: 10px 0;
 }
+/* Highlight the whole About Me paragraph */
+.about-page .highlight-text {
+    background: rgba(56, 189, 248, 0.12);
+    border-left: 4px solid #38bdf8;
+    border-radius: 8px;
+    padding: 10px 16px !important;
+}
