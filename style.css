@@ -378,3 +378,12 @@ footer {
     border-radius: 8px;
     padding: 10px 16px !important;
 }
+.achievement-group .group-photo {
+    display: block;
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    object-position: center;   /* centers the crop on the middle of the photo */
+    margin: 0 auto 0.6rem;     /* centers the image horizontally */
+    border-radius: 12px;
+}
