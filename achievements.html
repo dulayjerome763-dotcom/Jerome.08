@@ -28,9 +28,19 @@
         }
 
         .achievement-group .subsection-title {
-            margin: 0 0 0.75rem;
+            margin: 0 0 0.6rem;
             font-size: 1.1rem;
             text-align: center;
+        }
+
+        /* Picture at the top of each column */
+        .achievement-group .group-photo {
+            display: block;
+            width: 100%;
+            height: 100px;
+            object-fit: cover;      /* crops to fit without stretching */
+            border-radius: 12px;
+            margin: 0 0 0.6rem;
         }
 
         .achievement-group .cards {
@@ -45,11 +55,11 @@
             width: auto;
             max-width: none;
             margin: 0;
-            padding: 0.7rem 1rem;
+            padding: 0.6rem 1rem;
         }
 
         .achievement-group .card h3 {
-            margin: 0 0 0.25rem;
+            margin: 0 0 0.2rem;
             font-size: 1rem;
         }
 
@@ -63,6 +73,10 @@
         @media (max-width: 800px) {
             .achievement-columns {
                 grid-template-columns: 1fr;
+            }
+
+            .achievement-group .group-photo {
+                height: 160px;
             }
         }
     </style>
@@ -93,8 +107,9 @@
             <!-- Academic -->
             <div class="achievement-group">
                 <h3 class="subsection-title">Academic</h3>
+                <!-- Put your picture in an "images" folder and match the file name below -->
+                <img class="group-photo" src="images/academic.jpg" alt="Jerome receiving an academic award">
                 <div class="cards">
-                    <!-- TODO: Replace the placeholders with your real academic awards -->
                     <article class="card">
                         <h3>[With Honors]</h3>
                         <p>[Baguio City High School], [2026]</p>
@@ -115,6 +130,7 @@
             <!-- Sports -->
             <div class="achievement-group">
                 <h3 class="subsection-title">Sports</h3>
+                <img class="group-photo" src="images/sports.jpg" alt="Jerome playing football">
                 <div class="cards">
                     <article class="card">
                         <h3>3rd Place</h3>
@@ -136,8 +152,8 @@
             <!-- Extra-Curricular -->
             <div class="achievement-group">
                 <h3 class="subsection-title">Extra-Curricular</h3>
+                <img class="group-photo" src="images/extracurricular.jpg" alt="Jerome at an extra-curricular activity">
                 <div class="cards">
-                    <!-- TODO: Replace the placeholders with your real activities -->
                     <article class="card">
                         <h3>[Volunteer]</h3>
                         <p>[Philippine Red Cross], [2025]</p>
