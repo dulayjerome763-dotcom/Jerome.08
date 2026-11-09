@@ -6,6 +6,66 @@
     <title>Achievements | Jerome Dulay</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
+
+    <!-- Compact layout so all three sections fit on one screen (no scrolling).
+         You can move this block into style.css if you prefer. -->
+    <style>
+        main .page-section {
+            padding-top: 1.5rem;
+            padding-bottom: 1.5rem;
+        }
+
+        main .page-section h2 {
+            margin-bottom: 1.25rem;
+        }
+
+        .achievement-columns {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .achievement-group .subsection-title {
+            margin: 0 0 0.75rem;
+            font-size: 1.1rem;
+            text-align: center;
+        }
+
+        .achievement-group .cards {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        .achievement-group .card {
+            width: auto;
+            max-width: none;
+            margin: 0;
+            padding: 0.7rem 1rem;
+        }
+
+        .achievement-group .card h3 {
+            margin: 0 0 0.25rem;
+            font-size: 1rem;
+        }
+
+        .achievement-group .card p {
+            margin: 0;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        /* Stack the columns on small screens (scrolling is fine there) */
+        @media (max-width: 800px) {
+            .achievement-columns {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -17,41 +77,7 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="achievement.html" class="active" aria-current="page">Achievements</a></li>
-        <li><a href="project.html">Projects</a></li>
         <li><a href="family.html">Family</a></li>
-        <li><a href="contact.html">Contact</a></li>
     </ul>
 
-    <button id="themeBtn" type="button" aria-label="Toggle light or dark mode">Light Mode</button>
-</nav>
-</header>
-
-<main>
-    <section class="page-section">
-        <h2>My Achievements</h2>
-
-        <div class="cards">
-            <article class="card">
-                <h3>3rd Place</h3>
-                <p>Philippine Football Federation, 2026</p>
-            </article>
-
-            <article class="card">
-                <h3>5th Place</h3>
-                <p>Batang Pinoy, General Santos, 2026</p>
-            </article>
-
-            <article class="card">
-                <h3>Quarterfinalist</h3>
-                <p>Palarong Pambansa, Ilocos Norte, 2025</p>
-            </article>
-        </div>
-    </section>
-</main>
-
-<footer>
-    <p>&copy; 2026 Jerome Dulay | Personal Portfolio</p>
-</footer>
-
-</body>
-</html>
+    <button id="themeBtn" type="button" aria-label="Toggle light or dark mode">Light
