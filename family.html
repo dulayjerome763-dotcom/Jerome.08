@@ -1,44 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Family | Jerome Dulay</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Family and Friends</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<header>
-    <nav class="navbar">
-        <div class="logo">JEROME'S PORTFOLIO</div>
-
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="achievements.html">Achievements</a></li>
-            <li><a href="family.html" class="active">Family</a></li>
-        </ul>
-
-        <button id="themeBtn">Light Mode</button>
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <a href="index.html" class="logo">Jerome's <span Portfolio</span></a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="personal.html">Personal Information</a>
+      <a href="achievements.html">Achievements</a>
+      <a href="family.html" class="active">Family and Friends</a>
     </nav>
-</header>
+  </header>
 
-<main>
-    <section class="page-section">
-        <h2>My Family</h2>
+  <!-- MAIN -->
+  <main class="family-page">
+    <div class="section-title">
+      <h1>My Family</h1>
+      <div class="title-bar"></div>
+      <p class="subtitle"><span>♥</span> My Loved Ones <span>♥</span></p>
+    </div>
 
-        <p>
-            My family is my inspiration and motivation.
-            They continue to support me in achieving my goals.
-        </p>
+    <section class="cards">
+      <article class="card gold">
+        <span class="label">FATHER</span>
+        <span class="heart">♥</span>
+        <div class="photo"><img src="images/father.jpg" alt="Father" /></div>
+        <p class="caption">The one who taught me how to live.</p>
+      </article>
+
+      <article class="card teal">
+        <span class="label">MOTHER</span>
+        <span class="heart">♥</span>
+        <div class="photo"><img src="images/mother.jpg" alt="Mother" /></div>
+        <p class="caption">The one who supported me through everything.</p>
+      </article>
+
+      <article class="card gold">
+        <span class="label">SISTER</span>
+        <span class="heart">♥</span>
+        <div class="photo"><img src="images/sister.jpg" alt="Sister" /></div>
+        <p class="caption">The one who shares my interests and keeps me motivated.</p>
+      </article>
+
+      <article class="card blue">
+        <span class="label">FRIENDS</span>
+        <span class="heart">♥</span>
+        <div class="photo"><img src="images/friends.jpg" alt="Friends" /></div>
+        <p class="caption">The one who always has my back.</p>
+      </article>
     </section>
-</main>
 
-<footer>
-    <p>© 2026 Jerome Dulay | Personal Portfolio</p>
-</footer>
+    <div class="quote">
+      <span class="heart-dot">♥</span>
+      <p>Family is my first team. Everything I achieve, I achieve with them.</p>
+      <span class="heart-dot">♥</span>
+    </div>
+  </main>
 
-<script src="script.js"></script>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p><strong>Jerome Dulay</strong> © 2026. All rights reserved.</p>
+    <div class="socials">
+      <a href="#">Facebook</a>
+      <a href="#">Instagram</a>
+      <a href="#">GitHub</a>
+    </div>
+  </footer>
 
 </body>
 </html>
