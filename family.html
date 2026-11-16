@@ -3,78 +3,69 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Family and Friends</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <title>Family | Jerome's Portfolio</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <!-- NAVBAR -->
   <header class="navbar">
-    <a href="index.html" class="logo">Jerome's <span Portfolio</span></a>
+    <a href="index.html" class="logo">JEROME'S PORTFOLIO</a>
+
     <nav>
       <a href="index.html">Home</a>
-      <a href="personal.html">Personal Information</a>
+      <a href="about.html">Personal Information</a>
       <a href="achievements.html">Achievements</a>
-      <a href="family.html" class="active">Family and Friends</a>
+      <a href="family.html" class="active">Family And Friends</a>
     </nav>
+
+    <button id="themeToggle" class="theme-btn">Light Mode</button>
   </header>
 
   <!-- MAIN -->
-  <main class="family-page">
-    <div class="section-title">
-      <h1>My Family</h1>
-      <div class="title-bar"></div>
-      <p class="subtitle"><span>♥</span> My Loved Ones <span>♥</span></p>
-    </div>
+  <main class="content">
+    <h1>My Family</h1>
+    <p class="intro">My family is my inspiration and motivation. They continue to support me in achieving my goals.</p>
+    <p class="subtitle">♥ My Loved Ones ♥</p>
 
     <section class="cards">
-      <article class="card gold">
-        <span class="label">FATHER</span>
-        <span class="heart">♥</span>
-        <div class="photo"><img src="images/father.jpg" alt="Father" /></div>
-        <p class="caption">The one who taught me how to live.</p>
+      <article class="card">
+        <h2>FATHER <span>♥</span></h2>
+        <img src="images/father.jpg" alt="Father" />
+        <p>The one who taught me how to live.</p>
       </article>
 
-      <article class="card teal">
-        <span class="label">MOTHER</span>
-        <span class="heart">♥</span>
-        <div class="photo"><img src="images/mother.jpg" alt="Mother" /></div>
-        <p class="caption">The one who supported me through everything.</p>
+      <article class="card">
+        <h2>MOTHER <span>♥</span></h2>
+        <img src="images/mother.jpg" alt="Mother" />
+        <p>The one who supported me through everything.</p>
       </article>
 
-      <article class="card gold">
-        <span class="label">SISTER</span>
-        <span class="heart">♥</span>
-        <div class="photo"><img src="images/sister.jpg" alt="Sister" /></div>
-        <p class="caption">The one who shares my interests and keeps me motivated.</p>
+      <article class="card">
+        <h2>SISTER <span>♥</span></h2>
+        <img src="images/sister.jpg" alt="Sister" />
+        <p>The one who shares my interests and keeps me motivated.</p>
       </article>
 
-      <article class="card blue">
-        <span class="label">FRIENDS</span>
-        <span class="heart">♥</span>
-        <div class="photo"><img src="images/friends.jpg" alt="Friends" /></div>
-        <p class="caption">The one who always has my back.</p>
+      <article class="card">
+        <h2>FRIENDS <span>♥</span></h2>
+        <img src="images/friends.jpg" alt="Friends" />
+        <p>The one who always has my back.</p>
       </article>
     </section>
 
     <div class="quote">
-      <span class="heart-dot">♥</span>
+      <span>♥</span>
       <p>Family is my first team. Everything I achieve, I achieve with them.</p>
-      <span class="heart-dot">♥</span>
+      <span>♥</span>
     </div>
   </main>
 
   <!-- FOOTER -->
   <footer class="footer">
-    <p><strong>Jerome Dulay</strong> © 2026. All rights reserved.</p>
-    <div class="socials">
-      <a href="#">Facebook</a>
-      <a href="#">Instagram</a>
-      <a href="#">GitHub</a>
-    </div>
+    <p>© 2026 Jerome Dulay | Personal Portfolio</p>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
