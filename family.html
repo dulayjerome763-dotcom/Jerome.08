@@ -3,185 +3,184 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Family and Friends | Jerome Dulay</title>
+  <title>Family | Jerome's Portfolio</title>
 
   <style>
     :root {
-      --navy-900: #061a3d;
-      --gold: #ffd36b;
-      --teal: #2ed3c3;
-      --sky: #a9c6ef;
-      --muted: #d6e2f5;
+      --bg: #0f172a;
+      --nav-bg: #1e293b;
+      --card-bg: #1e293b;
+      --border: #334155;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+    }
+
+    body.light {
+      --bg: #f1f5f9;
+      --nav-bg: #ffffff;
+      --card-bg: #ffffff;
+      --border: #cbd5e1;
+      --text: #0f172a;
+      --muted: #64748b;
+      --accent: #0284c7;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     html, body {
+      width: 100%;
       height: 100%;
-      overflow: hidden; /* no scrolling */
+      overflow: hidden;            /* no scrolling at all */
     }
 
     body {
       font-family: "Segoe UI", Tahoma, Arial, sans-serif;
-      color: #fff;
+      background: var(--bg);
+      color: var(--text);
       display: flex;
       flex-direction: column;
       height: 100vh;
       height: 100dvh;
-      background: linear-gradient(180deg, #0a2a5e 0%, #0d3a7a 50%, #0a2a5e 100%);
+      transition: background 0.3s, color 0.3s;
     }
 
     /* ---------- NAVBAR ---------- */
     .navbar {
       flex: 0 0 auto;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      padding: 0 36px;
-      height: 60px;
-      background: var(--navy-900);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      justify-content: space-between;
+      padding: 0 30px;
+      height: 56px;
+      background: var(--nav-bg);
     }
 
     .logo {
-      color: #fff;
+      color: var(--accent);
+      font-size: 22px;
       font-weight: 700;
-      font-size: 16px;
       text-decoration: none;
+      letter-spacing: 0.5px;
     }
-    .logo span { color: var(--gold); }
 
     .navbar nav { display: flex; gap: 22px; }
 
     .navbar nav a {
-      color: var(--muted);
+      color: var(--text);
       text-decoration: none;
-      font-size: 14px;
-      font-weight: 500;
+      font-size: 16px;
+      font-weight: 600;
       padding: 4px 0;
       border-bottom: 2px solid transparent;
       transition: color 0.2s, border-color 0.2s;
     }
-    .navbar nav a:hover { color: #fff; }
-    .navbar nav a.active { color: #fff; border-bottom-color: var(--gold); }
+    .navbar nav a:hover { color: var(--accent); }
+    .navbar nav a.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    .theme-btn {
+      background: transparent;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      padding: 7px 16px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+    .theme-btn:hover { background: var(--accent); color: var(--bg); }
 
     /* ---------- MAIN ---------- */
-    .family-page {
-      flex: 1 1 auto;
-      min-height: 0; /* lets the cards shrink to fit */
+    .content {
+      flex: 1 1 0;
+      min-height: 0;
       display: flex;
       flex-direction: column;
-      padding: 14px 20px 12px;
-      background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-      background-size: 28px 28px;
+      width: 100%;
+      max-width: 1250px;
+      margin: 0 auto;
+      padding: 14px 20px 10px;
+      text-align: center;
     }
 
-    .section-title { flex: 0 0 auto; text-align: center; }
-
-    .section-title h1 {
-      font-size: clamp(24px, 4.5vh, 38px);
-      font-weight: 800;
+    .content h1 {
+      flex: 0 0 auto;
+      color: var(--accent);
+      font-size: clamp(22px, 4.5vh, 36px);
       line-height: 1.1;
+      font-weight: 700;
+      margin-bottom: 6px;
     }
 
-    .title-bar {
-      width: 70px;
-      height: 4px;
-      margin: 5px auto 6px;
-      border-radius: 4px;
-      background: linear-gradient(90deg, var(--gold), var(--teal));
+    .intro {
+      flex: 0 0 auto;
+      font-size: clamp(12px, 2vh, 16px);
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.35;
     }
-
-    .subtitle {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--muted);
-    }
-    .subtitle span { color: var(--gold); font-size: 10px; margin: 0 6px; }
 
     /* ---------- CARDS ---------- */
     .cards {
-      flex: 1 1 auto;
+      flex: 1 1 0;
       min-height: 0;
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 18px;
-      width: 100%;
-      max-width: 1250px;
-      margin: 14px auto 0;
+      grid-template-rows: minmax(0, 1fr);
+      gap: 16px;
+      margin-top: 12px;
+      text-align: left;
     }
 
     .card {
-      position: relative;
       min-width: 0;
       min-height: 0;
       display: flex;
       flex-direction: column;
-      background: linear-gradient(180deg, #0c2a62, #0a2150);
+      background: var(--card-bg);
+      border: 1px solid var(--border);
       border-radius: 14px;
-      border-top: 4px solid var(--gold);
-      padding: 12px 10px 10px;
-      text-align: center;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
-      transition: transform 0.25s, box-shadow 0.25s;
+      padding: 12px;
+      overflow: hidden;
+      transition: border-color 0.25s, box-shadow 0.25s, background 0.3s;
     }
     .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.5);
+      border-color: var(--accent);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
     }
 
-    .card.gold { border-top-color: var(--gold); }
-    .card.teal { border-top-color: var(--teal); }
-    .card.blue { border-top-color: var(--sky); }
-
-    .label {
-      align-self: center;
+    .card h2 {
       flex: 0 0 auto;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      font-size: 11px;
-      font-weight: 700;
+      font-size: 13px;
+      font-weight: 600;
       letter-spacing: 1px;
-      padding: 4px 16px;
-      border-radius: 999px;
+      margin-bottom: 8px;
     }
+    .card h2 span { color: var(--accent); }
 
-    .heart {
-      position: absolute;
-      top: 10px;
-      right: 12px;
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      font-size: 11px;
-      color: #0a2150;
-      background: var(--gold);
-    }
-    .card.teal .heart { background: var(--teal); }
-    .card.blue .heart { background: #dbe6f7; }
-
+    /* The photo box fills the free space. The whole picture is
+       shown (contain) over a blurred copy of itself, so nothing is cropped. */
     .photo {
       position: relative;
-      flex: 1 1 auto;   /* photo takes all the free height */
+      flex: 1 1 0;
       min-height: 0;
-      margin-top: 10px;
-      border-radius: 14px;
-      border: 3px solid #8a7b55;
+      border-radius: 10px;
       overflow: hidden;
-      background: linear-gradient(135deg, #1d3f7d, #2a5aa8);
-      display: grid;
-      place-items: center;
+      background: var(--bg);
     }
-    .card.teal .photo { border-color: #2a9a9a; }
-    .card.blue .photo { border-color: #6f89b6; }
 
     .photo::before {
-      content: attr(data-initial);
-      font-size: 60px;
-      font-weight: 800;
-      color: rgba(255, 255, 255, 0.35);
+      content: "";
+      position: absolute;
+      inset: -20px;
+      background-image: var(--src);
+      background-size: cover;
+      background-position: center;
+      filter: blur(16px) brightness(0.7);
     }
 
     .photo img {
@@ -189,17 +188,16 @@
       inset: 0;
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
       display: block;
     }
 
-    .caption {
+    .card p {
       flex: 0 0 auto;
-      margin: 10px 6px 2px;
-      font-size: 12px;
-      font-style: italic;
+      margin-top: 8px;
       color: var(--muted);
-      line-height: 1.35;
+      font-size: clamp(11px, 1.8vh, 14px);
+      line-height: 1.3;
     }
 
     /* ---------- QUOTE ---------- */
@@ -209,68 +207,43 @@
       align-items: center;
       justify-content: center;
       gap: 12px;
-      margin-top: 12px;
-      text-align: center;
+      margin-top: 10px;
     }
+    .quote span { color: var(--accent); }
     .quote p {
-      font-size: 13px;
-      font-weight: 700;
+      font-size: clamp(11px, 2vh, 15px);
+      font-weight: 600;
       font-style: italic;
-    }
-    .heart-dot {
-      flex-shrink: 0;
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      background: var(--gold);
-      color: #0a2150;
-      font-size: 11px;
-      display: grid;
-      place-items: center;
     }
 
     /* ---------- FOOTER ---------- */
     .footer {
       flex: 0 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 36px;
-      height: 40px;
-      background: var(--navy-900);
-      font-size: 12px;
+      background: var(--nav-bg);
       color: var(--muted);
+      text-align: center;
+      padding: 12px;
+      font-size: 14px;
     }
-    .footer strong { color: #fff; }
-    .socials { display: flex; gap: 16px; }
-    .socials a {
-      color: var(--muted);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .socials a:hover { color: var(--gold); }
 
-    /* ---------- SMALL SCREENS: 2 x 2 grid, still no scroll ---------- */
+    /* ---------- SMALL SCREENS: 2 x 2 grid ---------- */
     @media (max-width: 800px) {
-      .navbar { height: auto; padding: 8px 12px; flex-direction: column; gap: 6px; }
-      .navbar nav { flex-wrap: wrap; justify-content: center; gap: 10px; }
-      .navbar nav a { font-size: 12px; }
-      .logo { font-size: 14px; }
+      .navbar { height: auto; flex-direction: column; padding: 8px 12px; gap: 6px; }
+      .navbar nav { flex-wrap: wrap; justify-content: center; gap: 12px; }
+      .navbar nav a { font-size: 13px; }
+      .logo { font-size: 16px; }
+      .theme-btn { padding: 4px 12px; font-size: 12px; }
 
-      .family-page { padding: 8px 10px; }
+      .content { padding: 8px; }
       .cards {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         grid-template-rows: repeat(2, minmax(0, 1fr));
-        gap: 10px;
-        margin-top: 8px;
+        gap: 8px;
       }
-      .card { padding: 8px 6px 6px; }
-      .heart { display: none; }
-      .label { font-size: 10px; padding: 3px 10px; }
-      .caption { font-size: 10px; margin-top: 6px; }
-      .quote p { font-size: 10px; }
-      .heart-dot { width: 18px; height: 18px; font-size: 9px; }
-      .footer { height: auto; padding: 6px 10px; flex-direction: column; gap: 2px; font-size: 11px; }
+      .card { padding: 6px; border-radius: 10px; }
+      .card h2 { font-size: 10px; margin-bottom: 4px; }
+      .card p { font-size: 9px; margin-top: 4px; }
+      .footer { padding: 6px; font-size: 11px; }
     }
   </style>
 </head>
@@ -278,77 +251,84 @@
 
   <!-- NAVBAR -->
   <header class="navbar">
-    <a href="index.html" class="logo">Jerome <span>Dulay</span></a>
+    <a href="index.html" class="logo">JEROME'S PORTFOLIO</a>
+
     <nav>
       <a href="index.html">Home</a>
-      <a href="personal.html">Personal Information</a>
+      <a href="about.html">About</a>
       <a href="achievements.html">Achievements</a>
-      <a href="family.html" class="active">Family and Friends</a>
+      <a href="family.html" class="active">Family</a>
     </nav>
+
+    <button id="themeToggle" class="theme-btn">Light Mode</button>
   </header>
 
   <!-- MAIN -->
-  <main class="family-page">
-    <div class="section-title">
-      <h1>My Family</h1>
-      <div class="title-bar"></div>
-      <p class="subtitle"><span>♥</span> My Loved Ones <span>♥</span></p>
-    </div>
+  <main class="content">
+    <h1>My Family</h1>
+    <p class="intro">My family is my inspiration and motivation. They continue to support me in achieving my goals.</p>
 
     <section class="cards">
-      <article class="card gold">
-        <span class="label">FATHER</span>
-        <span class="heart">♥</span>
-        <div class="photo" data-initial="F">
-          <img src="images/father.jpg" alt="Father" onerror="this.style.display='none'" />
+      <article class="card">
+        <h2>FATHER <span>♥</span></h2>
+        <div class="photo" style="--src: url('images/father.jpg')">
+          <img src="images/father.jpg" alt="Father" />
         </div>
-        <p class="caption">The one who taught me how to live.</p>
+        <p>The one who taught me how to live.</p>
       </article>
 
-      <article class="card teal">
-        <span class="label">MOTHER</span>
-        <span class="heart">♥</span>
-        <div class="photo" data-initial="M">
-          <img src="images/mother.jpg" alt="Mother" onerror="this.style.display='none'" />
+      <article class="card">
+        <h2>MOTHER <span>♥</span></h2>
+        <div class="photo" style="--src: url('images/mother.jpg')">
+          <img src="images/mother.jpg" alt="Mother" />
         </div>
-        <p class="caption">The one who supported me through everything.</p>
+        <p>The one who supported me through everything.</p>
       </article>
 
-      <article class="card gold">
-        <span class="label">SISTER</span>
-        <span class="heart">♥</span>
-        <div class="photo" data-initial="S">
-          <img src="images/sister.jpg" alt="Sister" onerror="this.style.display='none'" />
+      <article class="card">
+        <h2>SISTER <span>♥</span></h2>
+        <div class="photo" style="--src: url('images/sister.jpg')">
+          <img src="images/sister.jpg" alt="Sister" />
         </div>
-        <p class="caption">The one who shares my interests and keeps me motivated.</p>
+        <p>The one who shares my interests and keeps me motivated.</p>
       </article>
 
-      <article class="card blue">
-        <span class="label">FRIENDS</span>
-        <span class="heart">♥</span>
-        <div class="photo" data-initial="★">
-          <img src="images/friends.jpg" alt="Friends" onerror="this.style.display='none'" />
+      <article class="card">
+        <h2>FRIENDS <span>♥</span></h2>
+        <div class="photo" style="--src: url('images/friends.jpg')">
+          <img src="images/friends.jpg" alt="Friends" />
         </div>
-        <p class="caption">The one who always has my back.</p>
+        <p>The one who always has my back.</p>
       </article>
     </section>
 
     <div class="quote">
-      <span class="heart-dot">♥</span>
+      <span>♥</span>
       <p>Family is my first team. Everything I achieve, I achieve with them.</p>
-      <span class="heart-dot">♥</span>
+      <span>♥</span>
     </div>
   </main>
 
   <!-- FOOTER -->
   <footer class="footer">
-    <p><strong>Jerome Dulay</strong> © 2026. All rights reserved.</p>
-    <div class="socials">
-      <a href="#">Facebook</a>
-      <a href="#">Instagram</a>
-      <a href="#">GitHub</a>
-    </div>
+    <p>© 2026 Jerome Dulay | Personal Portfolio</p>
   </footer>
 
+  <script>
+    const toggleBtn = document.getElementById("themeToggle");
+
+    try {
+      if (localStorage.getItem("theme") === "light") {
+        document.body.classList.add("light");
+        toggleBtn.textContent = "Dark Mode";
+      }
+    } catch (e) {}
+
+    toggleBtn.addEventListener("click", () => {
+      const isLight = document.body.classList.toggle("light");
+      toggleBtn.textContent = isLight ? "Dark Mode" : "Light Mode";
+      try { localStorage.setItem("theme", isLight ? "light" : "dark"); } catch (e) {}
+    });
+  </script>
 </body>
 </html>
