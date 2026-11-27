@@ -387,7 +387,7 @@ footer {
     margin: 0 auto 0.6rem;     /* centers the image horizontally */
     border-radius: 12px;
 }
-.profile-photo {
+.profile-container {
   width: auto;
   height: auto;
   max-width: 100%;
