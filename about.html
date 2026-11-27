@@ -4,13 +4,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Personal Information | Jerome Dulay</title>
 
 <style>
 :root {
     --bg: #0f172a;
-    --card: #1e293b;
     --nav: #1e293b;
+    --card: #1e293b;
     --text: #e2e8f0;
     --muted: #94a3b8;
     --accent: #38bdf8;
@@ -19,8 +20,8 @@
 
 body.light {
     --bg: #f1f5f9;
-    --card: #ffffff;
     --nav: #ffffff;
+    --card: #ffffff;
     --text: #0f172a;
     --muted: #64748b;
     --accent: #0284c7;
@@ -40,7 +41,7 @@ html, body {
 }
 
 body {
-    font-family: "Segoe UI", Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     background: var(--bg);
     color: var(--text);
     transition: background 0.3s, color 0.3s;
@@ -55,22 +56,21 @@ body {
     overflow: hidden;
 }
 
-/* NAVBAR */
+/* NAVIGATION BAR */
 .navbar {
-    flex-shrink: 0;
-    min-height: 65px;
-    padding: 10px 25px;
+    height: 44px;
+    min-height: 44px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 12px;
+    padding: 0 20px;
     background: var(--nav);
     border-bottom: 1px solid var(--border);
 }
 
 .logo {
     color: var(--accent);
-    font-size: 19px;
+    font-size: 18px;
     font-weight: bold;
     white-space: nowrap;
 }
@@ -78,70 +78,73 @@ body {
 .navbar ul {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 18px;
+    gap: 22px;
     list-style: none;
 }
 
-.navbar a {
+.navbar ul a {
     color: var(--text);
     text-decoration: none;
     font-size: 13px;
-    font-weight: 600;
     white-space: nowrap;
+    transition: color 0.3s;
 }
 
-.navbar a:hover,
-.navbar a.active {
+.navbar ul a:hover,
+.navbar ul a.active {
     color: var(--accent);
 }
 
+/* THEME BUTTON */
 #themeBtn {
     background: transparent;
     color: var(--accent);
     border: 1px solid var(--accent);
-    padding: 7px 13px;
+    padding: 6px 14px;
     border-radius: 25px;
-    cursor: pointer;
-    font-weight: bold;
     font-size: 12px;
+    cursor: pointer;
     white-space: nowrap;
 }
 
-/* MAIN LAYOUT */
+#themeBtn:hover {
+    background: var(--accent);
+    color: var(--bg);
+}
+
+/* MAIN CONTENT */
 main {
     flex: 1;
     min-height: 0;
-    display: grid;
-    grid-template-columns: 0.9fr 1.1fr;
-    gap: 18px;
-    padding: 15px 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 14px 19px 12px;
+    gap: 12px;
     overflow: hidden;
 }
 
 .page-section {
-    min-width: 0;
-    min-height: 0;
     display: flex;
     flex-direction: column;
     gap: 10px;
+    min-height: 0;
 }
 
 h2 {
     color: var(--accent);
-    font-size: clamp(17px, 2vw, 25px);
+    font-size: 23px;
 }
 
 h3 {
     color: var(--accent);
-    font-size: clamp(11px, 1.2vw, 15px);
-    margin-bottom: 5px;
+    font-size: 14px;
+    margin-bottom: 6px;
 }
 
 .intro {
-    font-size: clamp(10px, 1vw, 13px);
-    line-height: 1.55;
-    text-align: justify;
+    font-size: 13px;
+    line-height: 1.45;
 }
 
 .highlight {
@@ -149,19 +152,18 @@ h3 {
     font-weight: bold;
 }
 
-/* CARDS */
+/* CARD LAYOUT */
 .cards {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 9px;
-    min-height: 0;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
 }
 
 .card {
     background: var(--card);
     border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 11px;
+    border-radius: 11px;
+    padding: 12px 13px;
     min-width: 0;
     overflow-wrap: anywhere;
     transition: border-color 0.3s;
@@ -172,53 +174,51 @@ h3 {
 }
 
 .card p {
-    font-size: clamp(9px, 0.95vw, 12px);
-    line-height: 1.5;
-    margin-bottom: 3px;
+    font-size: 13px;
+    line-height: 1.45;
+}
+
+.card strong {
+    color: var(--text);
 }
 
 /* INTEREST CARDS */
 .interests .card {
-    min-height: 65px;
+    min-height: 85px;
 }
 
-/* PERSONAL DETAILS */
-.details {
-    flex: 1;
-    grid-template-rows: 1fr 1fr;
-}
-
+/* PERSONAL DETAILS CARDS */
 .details .card {
-    overflow: hidden;
+    min-height: 215px;
 }
 
 /* FOOTER */
 footer {
-    flex-shrink: 0;
-    text-align: center;
-    padding: 8px;
-    background: var(--nav);
+    height: 32px;
+    min-height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--bg);
     border-top: 1px solid var(--border);
-    color: var(--muted);
-    font-size: 11px;
+    font-size: 13px;
 }
 
-/* TABLETS */
-@media (max-width: 900px) {
+/* MEDIUM SCREENS */
+@media (max-width: 950px) {
     .navbar {
-        padding: 10px 14px;
-        gap: 8px;
+        padding: 0 12px;
     }
 
     .logo {
-        font-size: 15px;
+        font-size: 14px;
     }
 
     .navbar ul {
         gap: 10px;
     }
 
-    .navbar a {
+    .navbar ul a {
         font-size: 11px;
     }
 
@@ -228,18 +228,27 @@ footer {
     }
 
     .card {
-        padding: 8px;
+        padding: 9px;
+    }
+
+    .card p {
+        font-size: 11px;
+    }
+
+    .details .card {
+        min-height: 0;
     }
 }
 
-/* IPHONE AND SMALL SCREENS */
+/* IPHONE / SMALL SCREENS */
 @media (max-width: 600px) {
     .navbar {
-        min-height: 100px;
-        padding: 8px;
+        height: 75px;
+        min-height: 75px;
+        padding: 7px 10px;
         display: grid;
         grid-template-columns: 1fr auto;
-        gap: 7px;
+        gap: 6px;
     }
 
     .logo {
@@ -247,34 +256,32 @@ footer {
     }
 
     #themeBtn {
-        padding: 6px 9px;
         font-size: 10px;
+        padding: 5px 9px;
     }
 
     .navbar ul {
         grid-column: 1 / -1;
-        display: grid;
-        grid-template-columns: repeat(4, auto);
         justify-content: space-between;
         gap: 5px;
     }
 
-    .navbar a {
+    .navbar ul a {
         font-size: 9px;
     }
 
     main {
-        grid-template-columns: 0.9fr 1.1fr;
-        gap: 7px;
-        padding: 8px 6px;
+        justify-content: space-evenly;
+        padding: 7px;
+        gap: 5px;
     }
 
     .page-section {
-        gap: 6px;
+        gap: 5px;
     }
 
     h2 {
-        font-size: 13px;
+        font-size: 15px;
     }
 
     h3 {
@@ -285,10 +292,10 @@ footer {
     .intro {
         font-size: 9px;
         line-height: 1.35;
-        text-align: left;
     }
 
     .cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 5px;
     }
 
@@ -299,47 +306,54 @@ footer {
 
     .card p {
         font-size: 8px;
-        line-height: 1.4;
-        margin-bottom: 2px;
+        line-height: 1.35;
     }
 
     .interests .card {
-        min-height: 55px;
+        min-height: 48px;
+    }
+
+    .details .card {
+        min-height: 0;
     }
 
     footer {
-        padding: 5px;
+        height: 24px;
+        min-height: 24px;
         font-size: 9px;
     }
 }
 
-/* SHORT SCREEN ADJUSTMENT */
-@media (max-height: 650px) {
-    .navbar {
-        min-height: 48px;
-        padding: 5px 12px;
-    }
-
+/* SHORT SCREENS */
+@media (max-height: 650px) and (min-width: 601px) {
     main {
         padding-top: 7px;
         padding-bottom: 7px;
-        gap: 8px;
+        gap: 6px;
     }
 
     .page-section {
-        gap: 5px;
+        gap: 6px;
+    }
+
+    .details .card {
+        min-height: 0;
+    }
+
+    .interests .card {
+        min-height: 65px;
     }
 
     .card {
-        padding: 6px;
+        padding: 8px;
     }
 
-    .intro {
-        line-height: 1.3;
+    .card p {
+        font-size: 11px;
     }
 
-    footer {
-        padding: 4px;
+    h2 {
+        font-size: 20px;
     }
 }
 </style>
@@ -349,6 +363,7 @@ footer {
 
 <div class="page">
 
+<!-- NAVBAR -->
 <header>
 <nav class="navbar">
 
@@ -366,36 +381,28 @@ footer {
 </nav>
 </header>
 
+<!-- MAIN CONTENT -->
 <main>
 
-<!-- LEFT SIDE -->
+<!-- PERSONAL INFORMATION -->
 <section class="page-section">
 
 <h2>Personal Information</h2>
 
 <p class="intro">
-Hello! My name is Jerome James Villar Dulay.
-I am a Bachelor of Science in Information Technology
-student who enjoys learning programming. I'm especially
-interested in front-end development and creating clean,
-responsive designs using HTML, CSS, and JavaScript.
-
-I'm also a <span class="highlight">football player</span>.
-The sport taught me <span class="highlight">discipline,
-consistency, teamwork, and perseverance</span>, which I
-bring into my studies and every project I build.
+Hello! My name is Jerome James Villar Dulay. I am a Bachelor of Science in Information Technology student who enjoys learning programming. I'm especially interested in front-end development, and I love turning ideas into clean, responsive designs using HTML, CSS, and JavaScript. I'm always eager to learn new tools, take on projects that challenge me, and grow into a skilled developer. I'm also a <span class="highlight">football player</span>, and the sport is the reason I'm <span class="highlight">disciplined</span>. It taught me <span class="highlight">consistency, teamwork, and perseverance</span>, which I bring into my studies and every project I build.
 </p>
 
 <div class="cards interests">
 
 <div class="card">
 <h3>Web Development</h3>
-<p>Learning to create modern websites.</p>
+<p>Learning how to create modern websites.</p>
 </div>
 
 <div class="card">
 <h3>Programming</h3>
-<p>Improving coding and problem-solving skills.</p>
+<p>Improving my coding and problem-solving skills.</p>
 </div>
 
 <div class="card">
@@ -405,13 +412,13 @@ bring into my studies and every project I build.
 
 <div class="card">
 <h3>Football</h3>
-<p>Building discipline and teamwork.</p>
+<p>Built my discipline, teamwork, and perseverance.</p>
 </div>
 
 </div>
 </section>
 
-<!-- RIGHT SIDE -->
+<!-- PERSONAL DETAILS -->
 <section class="page-section">
 
 <h2>Personal Details</h2>
@@ -453,7 +460,7 @@ bring into my studies and every project I build.
 <p><strong>Languages:</strong> Filipino, English</p>
 <p><strong>Hobbies:</strong> Playing Online Games</p>
 <p><strong>Sports:</strong> Football, Basketball</p>
-<p><strong>Positions:</strong> Right Back, Point Guard</p>
+<p><strong>Playing Positions:</strong> Right Back, Point Guard</p>
 <p><strong>Motto:</strong> Progress Over Perfection</p>
 </div>
 
@@ -462,12 +469,14 @@ bring into my studies and every project I build.
 
 </main>
 
+<!-- FOOTER -->
 <footer>
 <p>© 2026 Jerome Dulay | Personal Portfolio</p>
 </footer>
 
 </div>
 
+<!-- DARK / LIGHT MODE -->
 <script>
 const themeBtn = document.getElementById("themeBtn");
 
@@ -488,6 +497,7 @@ try {
 setTheme(savedTheme);
 
 themeBtn.addEventListener("click", function() {
+
     const newTheme = document.body.classList.contains("light")
         ? "dark"
         : "light";
@@ -497,6 +507,7 @@ themeBtn.addEventListener("click", function() {
     try {
         localStorage.setItem("theme", newTheme);
     } catch (error) {}
+
 });
 </script>
 
@@ -504,4 +515,3 @@ themeBtn.addEventListener("click", function() {
 
 </body>
 </html>
-
