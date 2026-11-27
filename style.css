@@ -344,6 +344,7 @@ footer {
     margin: 0 auto 0.6rem;     /* centers the image horizontally */
     border-radius: 12px;
 }
+
 /* ---------- Home page fits on one screen (desktop and laptop) ---------- */
 @media (min-width: 801px) {
     .hero {
