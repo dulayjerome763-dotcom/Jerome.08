@@ -355,85 +355,25 @@ footer {
         max-height: min(500px, calc(100vh - 190px));
     }
 }
-/* Match the Home page header and fonts.
-   Paste at the BOTTOM of the CSS used by your Personal Information page.
-   Colors are left alone so Light Mode keeps working. */
+<style>
+  body, body *:not(i) {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+  }
 
-body,
-button,
-input,
-textarea {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
-
-/* Top bar */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-sizing: border-box;
-  min-height: 65px;
-  padding: 0 6%;
-}
-
-/* "JEROME'S PORTFOLIO" */
-header .logo,
-header h1,
-header h2 {
-  margin: 0;
-  font-size: 20px;
-  font-weight: 700;
-}
-
-/* Menu */
-header nav ul {
-  display: flex;
-  gap: 22px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-header nav {
-  display: flex;
-  gap: 22px;
-}
-
-header nav a {
-  padding: 4px 0 6px;
-  font-size: 16px;
-  font-weight: 600;
-  text-decoration: none;
-  border-bottom: 2px solid transparent;
-}
-
-/* Underline on the current page and on hover */
-header nav a.active,
-header nav a:hover {
-  border-bottom-color: #38bdf8;
-}
-
-/* Light Mode button */
-header button {
-  min-width: 104px;
-  height: 33px;
-  padding: 0 16px;
-  font-size: 14px;
-  font-weight: 700;
-  border-radius: 999px;
-}
-
-/* Small screens */
-@media (max-width: 800px) {
   header {
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 12px 16px;
+    min-height: 65px !important;
   }
 
-  header nav,
-  header nav ul {
-    flex-wrap: wrap;
-    gap: 12px;
+  nav a {
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    padding: 4px 0 6px !important;
+    border-bottom: 2px solid transparent !important;
   }
-}
+
+  nav a.active,
+  nav a:hover {
+    border-bottom-color: #38bdf8 !important;
+  }
+</style>
