@@ -344,3 +344,13 @@ footer {
     margin: 0 auto 0.6rem;     /* centers the image horizontally */
     border-radius: 12px;
 }
+/* ---------- Home page fits on one screen (desktop and laptop) ---------- */
+@media (min-width: 801px) {
+    .hero {
+        padding: 20px 6%;
+    }
+
+    .profile-container img {
+        max-height: min(500px, calc(100vh - 190px));
+    }
+}
