@@ -2,606 +2,374 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Personal Information | Jerome Dulay</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Information | Jerome Dulay</title>
 
-<style>
-:root {
-    --bg: #0f172a;
-    --card: #1e293b;
-    --nav: #1e293b;
-    --text: #e2e8f0;
-    --muted: #94a3b8;
-    --accent: #38bdf8;
-    --border: #334155;
-}
+    <style>
+        :root {
+            --bg: #0f172a;
+            --card: #1e293b;
+            --text: #e2e8f0;
+            --accent: #38bdf8;
+            --border: #334155;
+        }
 
-body.light {
-    --bg: #f1f5f9;
-    --card: #ffffff;
-    --nav: #ffffff;
-    --text: #0f172a;
-    --muted: #64748b;
-    --accent: #0284c7;
-    --border: #cbd5e1;
-}
+        body.light {
+            --bg: #f1f5f9;
+            --card: #ffffff;
+            --text: #1e293b;
+            --accent: #0369a1;
+            --border: #cbd5e1;
+        }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-html, body {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
+        html {
+            font-size: min(1.9vh, 1.2vw);
+        }
 
-body {
-    font-family: "Segoe UI", Arial, sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    transition: background 0.3s, color 0.3s;
-}
+        html, body {
+            height: 100%;
+            overflow: hidden;
+        }
 
-.page {
-    width: 100%;
-    height: 100vh;
-    height: 100dvh;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-}
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.4;
+        }
 
-/* NAVBAR */
-.navbar {
-    flex-shrink: 0;
-    min-height: 58px;
-    padding: 8px 22px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-    background: var(--nav);
-    border-bottom: 1px solid var(--border);
-}
+        .page {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            min-height: 100dvh;
+        }
 
-.logo {
-    color: var(--accent);
-    font-size: 17px;
-    font-weight: bold;
-    white-space: nowrap;
-}
+        .navbar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 6%;
+            line-height: 1.6;
+            background: var(--card);
+            border-bottom: 1px solid var(--border);
+        }
 
-.navbar ul {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-    list-style: none;
-}
+        .logo {
+            font-weight: 700;
+            font-size: 20.8px;
+            color: var(--accent);
+        }
 
-.navbar a {
-    color: var(--text);
-    text-decoration: none;
-    font-size: 12px;
-    font-weight: 600;
-    white-space: nowrap;
-}
+        .navbar ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 22px;
+            list-style: none;
+        }
 
-.navbar a:hover,
-.navbar a.active {
-    color: var(--accent);
-}
+        .navbar a {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text);
+            text-decoration: none;
+            padding-bottom: 4px;
+            border-bottom: 2px solid transparent;
+        }
 
-#themeBtn {
-    background: transparent;
-    color: var(--accent);
-    border: 1px solid var(--accent);
-    padding: 6px 11px;
-    border-radius: 25px;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 11px;
-    white-space: nowrap;
-}
+        .navbar a:hover,
+        .navbar a.active {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+        }
 
-/* MAIN LAYOUT */
-main {
-    flex: 1;
-    min-height: 0;
-    display: grid;
-    grid-template-columns: 0.9fr 1.1fr;
-    gap: 14px;
-    padding: 12px 20px;
-    overflow: hidden;
-}
+        #themeBtn {
+            min-width: 104px;
+            height: 33px;
+            padding: 0 16px;
+            font-family: inherit;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            border: 1px solid var(--accent);
+            border-radius: 20px;
+            background: transparent;
+            color: var(--accent);
+        }
 
-.page-section {
-    min-width: 0;
-    min-height: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
+        #themeBtn:hover {
+            background: var(--accent);
+            color: var(--bg);
+        }
 
-h2 {
-    color: var(--accent);
-    font-size: clamp(15px, 1.8vw, 22px);
-}
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 1.5rem;
+            padding: 1rem 2rem;
+        }
 
-h3 {
-    color: var(--accent);
-    font-size: clamp(10px, 1.1vw, 14px);
-    margin-bottom: 4px;
-}
+        .page-section {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            min-width: 0;
+        }
 
-.intro {
-    font-size: clamp(9px, 0.9vw, 12px);
-    line-height: 1.35;
-    text-align: justify;
-}
+        h2 {
+            font-size: 1.7rem;
+            color: var(--accent);
+        }
 
-.highlight {
-    color: var(--accent);
-    font-weight: bold;
-}
+        h3 {
+            font-size: 1.1rem;
+            color: var(--accent);
+            margin-bottom: 0.3rem;
+        }
 
-/* CARDS */
-.cards {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 7px;
-    min-height: 0;
-}
+        .highlight {
+            color: var(--accent);
+            font-weight: bold;
+        }
 
-.card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 9px;
-    padding: 8px;
-    min-width: 0;
-    overflow: hidden;
-    overflow-wrap: anywhere;
-    transition: border-color 0.3s;
-}
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 0.8rem;
+        }
 
-.card:hover {
-    border-color: var(--accent);
-}
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 0.8rem;
+            padding: 0.8rem 1rem;
+            overflow-wrap: anywhere;
+        }
 
-.card p {
-    font-size: clamp(8px, 0.85vw, 11px);
-    line-height: 1.3;
-    margin-bottom: 2px;
-}
+        footer {
+            text-align: center;
+            padding: 0.6rem;
+            border-top: 1px solid var(--border);
+        }
 
-/* INTEREST CARDS */
-.interests .card {
-    min-height: 0;
-}
+        @media (orientation: portrait) {
+            main {
+                gap: 1rem;
+                padding: 0.8rem;
+            }
 
-/* PERSONAL DETAILS */
-.details {
-    flex: 1;
-    min-height: 0;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-rows: repeat(2, minmax(0, 1fr));
-}
+            .cards {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
 
-.details .card {
-    min-height: 0;
-}
+            .navbar {
+                justify-content: center;
+                padding: 10px;
+            }
 
-/* DESCRIPTIONS */
-.description {
-    color: var(--muted);
-    font-size: clamp(7px, 0.75vw, 9px);
-    line-height: 1.3;
-    margin-top: 4px;
-    font-style: italic;
-}
-
-/* FOOTER */
-footer {
-    flex-shrink: 0;
-    text-align: center;
-    padding: 6px;
-    background: var(--nav);
-    border-top: 1px solid var(--border);
-    color: var(--muted);
-    font-size: 10px;
-}
-
-/* TABLETS */
-@media (max-width: 900px) {
-    .navbar {
-        padding: 8px 12px;
-        gap: 7px;
-    }
-
-    .logo {
-        font-size: 13px;
-    }
-
-    .navbar ul {
-        gap: 8px;
-    }
-
-    .navbar a {
-        font-size: 10px;
-    }
-
-    main {
-        padding: 9px 12px;
-        gap: 9px;
-    }
-
-    .card {
-        padding: 6px;
-    }
-
-    .intro {
-        font-size: 10px;
-    }
-}
-
-/* IPHONE AND SMALL SCREENS */
-@media (max-width: 600px) {
-    .navbar {
-        min-height: 75px;
-        padding: 6px 8px;
-        display: grid;
-        grid-template-columns: 1fr auto;
-        gap: 5px;
-    }
-
-    .logo {
-        font-size: 12px;
-    }
-
-    #themeBtn {
-        padding: 5px 8px;
-        font-size: 9px;
-    }
-
-    .navbar ul {
-        grid-column: 1 / -1;
-        display: flex;
-        justify-content: space-between;
-        gap: 3px;
-    }
-
-    .navbar a {
-        font-size: 8px;
-    }
-
-    main {
-        grid-template-columns: 0.9fr 1.1fr;
-        gap: 5px;
-        padding: 7px 5px;
-    }
-
-    .page-section {
-        gap: 5px;
-    }
-
-    h2 {
-        font-size: 12px;
-    }
-
-    h3 {
-        font-size: 9px;
-        margin-bottom: 3px;
-    }
-
-    .intro {
-        font-size: 8px;
-        line-height: 1.25;
-        text-align: left;
-    }
-
-    .cards {
-        gap: 4px;
-    }
-
-    .card {
-        padding: 5px;
-        border-radius: 6px;
-    }
-
-    .card p {
-        font-size: 7px;
-        line-height: 1.25;
-        margin-bottom: 2px;
-    }
-
-    .interests .card {
-        min-height: 0;
-    }
-
-    .details {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        grid-template-rows: repeat(2, minmax(0, 1fr));
-    }
-
-    .details .card {
-        padding: 4px;
-    }
-
-    .details .card p {
-        font-size: 6.5px;
-        line-height: 1.2;
-    }
-
-    .description {
-        font-size: 6px;
-        line-height: 1.2;
-        margin-top: 3px;
-    }
-
-    footer {
-        padding: 4px;
-        font-size: 8px;
-    }
-}
-
-/* SHORT SCREENS */
-@media (max-height: 650px) {
-    .navbar {
-        min-height: 45px;
-        padding: 4px 10px;
-    }
-
-    main {
-        padding-top: 5px;
-        padding-bottom: 5px;
-    }
-
-    .page-section {
-        gap: 4px;
-    }
-
-    .intro {
-        line-height: 1.2;
-    }
-
-    .card {
-        padding: 5px;
-    }
-
-    footer {
-        padding: 3px;
-    }
-}
-
-/* VERY SMALL IPHONES */
-@media (max-width: 380px) {
-    .navbar a {
-        font-size: 7px;
-    }
-
-    .logo {
-        font-size: 10px;
-    }
-
-    .intro {
-        font-size: 7px;
-    }
-
-    .details .card p {
-        font-size: 6px;
-    }
-}
-</style>
+            .navbar ul {
+                justify-content: center;
+                gap: 12px;
+                order: 3;
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 
-<body>
+<body class="about-page">
 
 <div class="page">
 
-<header>
-<nav class="navbar">
+    <header>
+        <nav class="navbar">
 
-<div class="logo">JEROME'S PORTFOLIO</div>
+            <div class="logo">JEROME'S PORTFOLIO</div>
 
-<ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html" class="active">Personal Information</a></li>
-    <li><a href="achievements.html">Achievements</a></li>
-    <li><a href="family.html">Family And Friends</a></li>
-</ul>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">Personal Information</a></li>
+                <li><a href="achievements.html">Achievements</a></li>
+                <li><a href="family.html">Family And Friends</a></li>
+            </ul>
 
-<button id="themeBtn" type="button">Light Mode</button>
+            <button id="themeBtn" type="button">Light Mode</button>
 
-</nav>
-</header>
+        </nav>
+    </header>
 
-<main>
+    <main>
 
-<!-- LEFT SIDE -->
-<section class="page-section">
+        <section class="page-section">
 
-<h2>Personal Information</h2>
+            <h2>Personal Information</h2>
 
-<p class="intro">
-Hello! My name is Jerome James Villar Dulay, also known as JJ.
-I am a Bachelor of Science in Information Technology student
-who is passionate about technology, creativity, and continuous
-learning.
+            <p>
+                Hello! My name is Jerome James Villar Dulay.
+                I am a Bachelor of Science in Information Technology
+                student who enjoys learning programming. I'm especially
+                interested in front-end development, and I love turning
+                ideas into clean, responsive designs using HTML, CSS, and JavaScript.
+                I'm always eager to learn new tools, take on projects that challenge me,
+                and grow into a skilled developer.
+                I'm also a <span class="highlight">football player</span>,
+                and the sport is the reason I'm <span class="highlight">disciplined</span>.
+                It taught me <span class="highlight">consistency, teamwork, and perseverance</span>,
+                which I bring into my studies and every project I build.
+            </p>
 
-I enjoy exploring the world of programming and discovering
-how technology can solve everyday problems. I am particularly
-interested in front-end development, where I can combine
-creativity and technical skills to build attractive,
-user-friendly, and responsive websites using HTML, CSS,
-and JavaScript.
+            <div class="cards">
 
-Aside from technology, I am also a football player.
-Playing football has helped me develop important values
-such as discipline, teamwork, leadership, patience, and
-perseverance. I believe that these qualities are important
-not only in sports but also in education and everyday life.
+                <div class="card">
+                    <h3>Web Development</h3>
+                    <p>Learning how to create modern websites.</p>
+                </div>
 
-My goal is to continuously improve my knowledge, develop
-my programming skills, and become a successful IT professional.
-</p>
+                <div class="card">
+                    <h3>Programming</h3>
+                    <p>Improving my coding and problem-solving skills.</p>
+                </div>
 
-<div class="cards interests">
+                <div class="card">
+                    <h3>Creativity</h3>
+                    <p>Turning ideas into digital projects.</p>
+                </div>
 
-<div class="card">
-<h3>Web Development</h3>
-<p>
-I enjoy designing and developing websites using HTML,
-CSS, and JavaScript. I am interested in creating
-responsive layouts with clean designs and easy navigation.
-</p>
-</div>
+                <div class="card">
+                    <h3>Football</h3>
+                    <p>Built my discipline, teamwork, and perseverance.</p>
+                </div>
 
-<div class="card">
-<h3>Programming</h3>
-<p>
-I enjoy learning different programming concepts and
-practicing how to write efficient code. I continuously
-improve my logical thinking and problem-solving abilities.
-</p>
-</div>
+            </div>
+        </section>
 
-<div class="card">
-<h3>Creativity</h3>
-<p>
-I like transforming ideas into meaningful digital
-projects. I enjoy experimenting with colors, layouts,
-designs, and features to improve user experiences.
-</p>
-</div>
+        <section class="page-section">
 
-<div class="card">
-<h3>Football</h3>
-<p>
-Football is one of my favorite sports. It teaches me
-teamwork, discipline, communication, and determination
-while helping me develop a competitive mindset.
-</p>
-</div>
+            <h2>Personal Details</h2>
 
-</div>
-</section>
+            <div class="cards">
 
-<!-- RIGHT SIDE -->
-<section class="page-section">
+                <div class="card">
+                    <h3>Basic Information</h3>
+                    <p><strong>Full Name:</strong> Jerome James Villar Dulay</p>
+                    <p><strong>Nickname:</strong> JJ</p>
+                    <p><strong>Age:</strong> 18</p>
+                    <p><strong>Date of Birth:</strong> August 25, 2008</p>
+                    <p><strong>Place of Birth:</strong> Baguio City, Benguet</p>
+                    <p><strong>Sex:</strong> Male</p>
+                    <p><strong>Civil Status:</strong> Single</p>
+                    <p><strong>Nationality:</strong> Filipino</p>
+                    <p><strong>Religion:</strong> Roman Catholic</p>
+                </div>
 
-<h2>Personal Details</h2>
+                <div class="card">
+                    <h3>Physical Information</h3>
+                    <p><strong>Height:</strong> 175 cm</p>
+                    <p><strong>Weight:</strong> 60 kg</p>
+                    <p><strong>Eye Color:</strong> Light Brown</p>
+                    <p><strong>Hair Color:</strong> Black</p>
+                    <p><strong>Blood Type:</strong> O+</p>
+                    <p><strong>Shoe Size:</strong> 9 US</p>
+                </div>
 
-<div class="cards details">
+                <div class="card">
+                    <h3>Contact Information</h3>
+                    <p><strong>Location:</strong> Baguio City, Benguet</p>
+                    <p><strong>Email:</strong> dulayjerome763@gmail.com</p>
+                    <p><strong>Phone:</strong> 09278875020</p>
+                    <p><strong>Social Media:</strong> Jerome Dulay</p>
+                </div>
 
-<div class="card">
-<h3>Basic Information</h3>
+                <div class="card">
+                    <h3>Other Information</h3>
+                    <p><strong>Languages:</strong> Filipino, English</p>
+                    <p><strong>Hobbies:</strong> Playing Online Games</p>
+                    <p><strong>Sports:</strong> Football, Basketball</p>
+                    <p><strong>Playing Positions:</strong> Right Back, Point Guard</p>
+                    <p><strong>Motto:</strong> Progress Over Perfection</p>
+                </div>
 
-<p><strong>Full Name:</strong> Jerome James Villar Dulay</p>
-<p><strong>Nickname:</strong> JJ</p>
-<p><strong>Age:</strong> 18</p>
-<p><strong>Date of Birth:</strong> August 25, 2008</p>
-<p><strong>Place of Birth:</strong> Baguio City, Benguet</p>
-<p><strong>Sex:</strong> Male</p>
-<p><strong>Civil Status:</strong> Single</p>
-<p><strong>Nationality:</strong> Filipino</p>
-<p><strong>Religion:</strong> Roman Catholic</p>
+            </div>
+        </section>
 
-<p class="description">
-These details provide an overview of my personal
-background, identity, and basic information.
-</p>
-</div>
+    </main>
 
-<div class="card">
-<h3>Physical Information</h3>
-
-<p><strong>Height:</strong> 175 cm</p>
-<p><strong>Weight:</strong> 60 kg</p>
-<p><strong>Eye Color:</strong> Brown</p>
-<p><strong>Hair Color:</strong> Black</p>
-<p><strong>Blood Type:</strong> O+</p>
-
-<p class="description">
-This section contains my general physical information
-and personal characteristics.
-</p>
-</div>
-
-<div class="card">
-<h3>Contact Information</h3>
-
-<p><strong>Location:</strong> Baguio City, Benguet</p>
-<p><strong>Email:</strong> dulayjerome763@gmail.com</p>
-<p><strong>Phone:</strong> 09278875020</p>
-<p><strong>Social Media:</strong> Jerome Dulay</p>
-
-<p class="description">
-These details provide ways to connect with me for
-communication, academic purposes, and other inquiries.
-</p>
-</div>
-
-<div class="card">
-<h3>Other Information</h3>
-
-<p><strong>Languages:</strong> Filipino, English</p>
-<p><strong>Hobbies:</strong> Playing Online Games</p>
-<p><strong>Sports:</strong> Football, Basketball</p>
-<p><strong>Positions:</strong> Right Back, Point Guard</p>
-<p><strong>Motto:</strong> Progress Over Perfection</p>
-
-<p class="description">
-My hobbies and interests reflect my personality.
-I enjoy activities that help me learn, stay active,
-and develop new skills.
-</p>
-</div>
-
-</div>
-</section>
-
-</main>
-
-<footer>
-<p>© 2026 Jerome Dulay | Personal Portfolio</p>
-</footer>
+    <footer>
+        <p>© 2026 Jerome Dulay | Personal Portfolio</p>
+    </footer>
 
 </div>
 
 <script>
-const themeBtn = document.getElementById("themeBtn");
+    const root = document.documentElement;
+    const page = document.querySelector(".page");
+    const themeBtn = document.getElementById("themeBtn");
 
-function setTheme(theme) {
-    const isLight = theme === "light";
+    function fitToScreen() {
+        let low = 3;
+        let high = 24;
 
-    document.body.classList.toggle("light", isLight);
+        for (let i = 0; i < 14; i++) {
+            const size = (low + high) / 2;
+            root.style.fontSize = size + "px";
 
-    themeBtn.textContent = isLight ? "Dark Mode" : "Light Mode";
-}
+            const fits =
+                page.offsetHeight <= window.innerHeight &&
+                page.scrollWidth <= root.clientWidth;
 
-let savedTheme = "dark";
+            if (fits) {
+                low = size;
+            } else {
+                high = size;
+            }
+        }
 
-try {
-    savedTheme = localStorage.getItem("theme") || "dark";
-} catch (error) {}
+        root.style.fontSize = low + "px";
+    }
 
-setTheme(savedTheme);
+    function setTheme(theme) {
+        const isLight = theme === "light";
 
-themeBtn.addEventListener("click", function() {
-    const newTheme = document.body.classList.contains("light")
-        ? "dark"
-        : "light";
+        document.body.classList.toggle("light", isLight);
 
-    setTheme(newTheme);
+        themeBtn.textContent =
+            isLight ? "Dark Mode" : "Light Mode";
+    }
+
+    themeBtn.addEventListener("click", () => {
+        const theme =
+            document.body.classList.contains("light")
+                ? "dark"
+                : "light";
+
+        setTheme(theme);
+
+        try {
+            localStorage.setItem("theme", theme);
+        } catch (e) {}
+
+        fitToScreen();
+    });
 
     try {
-        localStorage.setItem("theme", newTheme);
-    } catch (error) {}
-});
+        setTheme(localStorage.getItem("theme"));
+    } catch (e) {}
+
+    window.addEventListener("resize", fitToScreen);
+    window.addEventListener("load", fitToScreen);
+
+    fitToScreen();
 </script>
 
 <script src="effects.js" defer></script>
