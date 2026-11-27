@@ -355,25 +355,37 @@ footer {
         max-height: min(500px, calc(100vh - 190px));
     }
 }
-<style>
-  body, body *:not(i) {
+
+/* ---------- Same header and fonts on every page (keep this last) ---------- */
+body,
+body *:not(i) {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
-  }
+}
 
-  header {
-    min-height: 65px !important;
-  }
+.navbar,
+body > header {
+    min-height: 65px;
+    padding: 16px 6% !important;
+}
 
-  nav a {
-    font-size: 16px !important;
+.logo {
+    font-size: 1.3rem !important;
+    font-weight: 700 !important;
+}
+
+.navbar ul a,
+header nav a {
+    font-size: 1rem !important;
     font-weight: 600 !important;
     text-decoration: none !important;
-    padding: 4px 0 6px !important;
+    padding-bottom: 4px !important;
     border-bottom: 2px solid transparent !important;
-  }
+}
 
-  nav a.active,
-  nav a:hover {
-    border-bottom-color: #38bdf8 !important;
-  }
-</style>
+.navbar ul a:hover,
+.navbar ul a.active,
+header nav a:hover,
+header nav a.active {
+    color: var(--accent, #38bdf8) !important;
+    border-bottom-color: var(--accent, #38bdf8) !important;
+}
